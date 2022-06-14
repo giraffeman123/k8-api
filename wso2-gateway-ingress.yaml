@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wso2-gateway-ingress
+  namespace : default
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  #ingressClassName: nginx    
+  tls:
+  - hosts:
+    - wso2.gateway.localtest.me
+  rules:
+  - host: wso2.gateway.localtest.me
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: wso2-service
+            port:
+              number: 8243

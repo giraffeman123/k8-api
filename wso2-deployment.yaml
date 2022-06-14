@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wso2-am-deployment
+  namespace: default
+  labels:
+    app: wso2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wso2
+  template:
+    metadata:
+      labels:
+        app: wso2
+    spec:
+      containers:
+        - name: wso2-am
+          image: wso2/wso2am                    
