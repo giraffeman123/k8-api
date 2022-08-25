@@ -11,6 +11,7 @@ spec:
         command:         
         - "bin/sh"
         - "-c"        
-        - "echo \"1. Probando merge-sort-service: \"; curl http://merge-sort-service:8080/api; echo -e \"\n2. Probando merge-sort-service: \"; curl http://merge-sort-service:8080/api;"
+        - "echo \"1. Probando merge-sort-service: \"; curl http://merge-sort-service:8080/api; 
+          echo -e \"\n2. Probando merge-sort-service: \"; curl http://merge-sort-service:8080/api;"
       restartPolicy: Never
   backoffLimit: 4
