@@ -9,6 +9,14 @@ app.get('/api', async(req,res)=>{
     res.status(200).json("Welcome to merge sort app.");
 });
 
+app.get('/api/401', async(req,res)=>{
+    res.status(401).json("Unauthorized Access");
+});
+
+app.get('/api/500', async(req,res)=>{
+    res.status(500).json("Server Error");
+});
+
 app.post('/api/mergeSort', async(req, res) =>{                
     //var nums = [3,6,7,2,5,8,1];
     var nums = req.body.nums;
