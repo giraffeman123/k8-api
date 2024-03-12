@@ -2,6 +2,7 @@ var express = require('express');
 const bodyParser = require('body-parser');
 
 var app = express();
+const PORT = process.env.PORT || 80;
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
@@ -85,6 +86,6 @@ var transformDigitToArray = function(digit){
     return arr;
 }
 
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000!');
+app.listen(PORT, function () {
+    console.log(`Example app listening on port ${PORT}!`);
 });
